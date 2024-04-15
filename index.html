@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/favicon_io/site.webmanifest">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Remixicon CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="side-bar">
+      <div class="top">
+        <div class="hom">
+          <i class="ri-home-5-line"></i>
+          <h3>Home</h3>
+        </div>
+        <div class="search">
+          <i class="ri-search-2-line"></i>
+          <h3>Search</h3>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="bottom-top">
+          <div class="top-l">
+            <i class="ri-play-list-line"></i>
+            <h3>Your Library</h3>
+          </div>
+          <div class="top-r">
+            <i class="ri-add-line"></i>
+            <i class="ri-arrow-right-line"></i>
+          </div>
+        </div>
+        <div class="library" id="library"></div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-top">
+        <div class="img">
+          <img src="https://i.scdn.co/image/ab67706c0000da840334641284e9b20c68ae05f0" alt="Playlist Image">
+        </div>
+        <div class="txt">
+          <h3>Playlist</h3>
+          <h1>The Refreshner</h1>
+          <div class="user-info">
+            <div class="user-img">
+            </div>
+
+            <div class="info-txt">
+              <h3>Aayush</h3>
+              <h3>7 songs, 30 min</h3>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <div class="songs" id="songs"></div>
+      </div>
+    </div>
+
+    <!-- Player Section -->
+    <div class="player" id="player">
+      <div class="wave-container">
+        <ul class="wave-menu">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="controls">
+        <div class="controls-container">
+          <div class="backward" id="PlayerBackward">
+            <i class="ri-skip-back-fill"></i>
+          </div>
+          <div class="play" id="main">
+            <i class="ri-play-mini-fill"></i>
+          </div>
+          <div class="forward" id="PlayerForward">
+            <i class="ri-skip-forward-fill"></i>
+          </div>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline">
+            <span class="time" id="time"></span>
+          </div>
+          <div class="duration">
+            <h3 class="Song-duration" id="SongDuration">0:00</h3>
+            <h3 class="Current-duration" id="CurrentDuration">0:00</h3>
+          </div>
+        </div>
+      </div>
+      <div class="song" id="tempSong">
+        <div class="song-img">
+          <img src="https://i.scdn.co/image/ab67616d00001e02e2e352d89826aef6dbd5ff8f" alt="Song Image" />
+        </div>
+        <div class="song-info">
+          <div class="text">
+            <h3>Sunflower</h3>
+            <h5>Post Malone, Swae Lee</h5>
+          </div>
+          <div class="play" id="playSong">
+            <i class="ri-play-fill"></i>
+          </div>
+        </div>
+      </div>
+      <div class="top">
+        <div class="hom">
+          <i class="ri-home-5-line"></i>
+          <h3>Home</h3>
+        </div>
+        <div class="search">
+          <i class="ri-search-2-line"></i>
+          <h3>Search</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+      <div class="song" id="footersong">
+        <div class="song-img">
+          <img src="https://i.scdn.co/image/ab67616d00001e02e2e352d89826aef6dbd5ff8f" alt="Song Image" />
+        </div>
+        <div class="song-info">
+          <div class="text">
+            <h3>Sunflower</h3>
+            <h5>Post Malone, Swae Lee</h5>
+          </div>
+          <div class="play">
+            <i class="ri-play-fill"></i>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="backward" id="backward">
+          <i class="ri-skip-back-fill"></i>
+        </div>
+        <div class="play" id="mainPlay">
+          <i class="ri-play-mini-fill"></i>
+        </div>
+        <div class="forward" id="forward">
+          <i class="ri-skip-forward-fill"></i>
+        </div>
+      </div>
+      <div class="sound-controls"></div>
+    </div>
+  </div>
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
+
