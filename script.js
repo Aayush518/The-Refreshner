@@ -373,3 +373,20 @@ timeline.addEventListener("mousedown", function () {
   });
 
 });
+
+// Select the volume range input directly
+let volumeRange = document.getElementById("volumeRange");
+
+// Function to set volume
+const setVolume = () => {
+    audio.volume = volumeRange.value / 100;
+};
+
+// Event listener on volume change
+volumeRange.addEventListener("input", setVolume);
+
+// Set initial volume when the player initializes
+setVolume();
+
+
+
