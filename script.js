@@ -99,7 +99,7 @@ let Songs = document.getElementById("songs");
 let clouser = "";
 songs.map(
   (val, idex) =>
-    (clouser += `<div class="song" id="${idex}" >
+  (clouser += `<div class="song" id="${idex}" >
        <div class="song-img" data-index="${idex}">
          <img
            src="${val.img}"
@@ -338,5 +338,38 @@ function updateProgressBar() {
   setTimeout(updateProgressBar, 100);
 }
 
-// Call the function to start updating progress bar and current time
-updateProgressBar();
+let timeline = document.getElementById("timeline");
+let time = document.getElementById("time");
+
+// time can be click over the timeline to change the song time
+timeline.addEventListener("click", function (event) {
+  const timelineWidth = timeline.offsetWidth;
+  const timeClicked = event.offsetX;
+  const duration = audio.duration;
+
+
+  audio.currentTime = (timeClicked / timelineWidth) * duration;
+});
+
+// drag the time line to change the song time
+let isDragging = false;
+timeline.addEventListener("mousedown", function () {
+  isDragging = true;
+
+  document.addEventListener("mousemove", function (event) {
+    if (isDragging) {
+      const timelineWidth = timeline.offsetWidth;
+      const timeClicked = event.offsetX;
+      const duration = audio.duration;
+
+      audio.currentTime = (timeClicked / timelineWidth) * duration;
+
+
+      //once the mouse is released, the dragging stops
+      document.addEventListener("mouseup", function () {
+        isDragging = false;
+      });
+    }
+  });
+
+});
